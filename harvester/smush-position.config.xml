@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010-2011 VIVO Harvester Team. For full list of contributors, please see the AUTHORS file provided.
+  All rights reserved.
+  This program and the accompanying materials are made available under the terms of the new BSD license which accompanies this distribution, and is available at http://www.opensource.org/licenses/bsd-license.html
+-->
+<Config>
+    <!--INPUT : for more information please see the given config file -->
+    <Param name="inputJena-config">harvested-data.model.xml</Param>
+
+    <!--OPTIONS -->
+    <Param name="inputJena-predicates">http://vivoweb.org/ontology/core#Position</Param>
+    <Param name="namespace">http://vivo.example.com/harvest/position/</Param>
+    <Param name="replace">true</Param>
+    <Param name="wordiness">INFO</Param>
+</Config>

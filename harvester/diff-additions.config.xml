@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010-2011 VIVO Harvester Team. For full list of contributors, please see the AUTHORS file provided.
+  All rights reserved.
+  This program and the accompanying materials are made available under the terms of the new BSD license which accompanies this distribution, and is available at http://www.opensource.org/licenses/bsd-license.html
+-->
+<!--
+<%  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  %>
+<%    The diff tool is used to compare jena models and produce a result model which is the first model (minuend)      %>
+<%       with any matching statements in the second model (subtrahend) removed from it.                               %>
+<%    =====                                                                                                           %>
+<%    This tool produces the graph-math difference of the triples between two models. It produces a model with the    %>
+<%       triples which are in the minuend and not in the subtrahend.                                                  %>
+<%    Expressed mathematically as minuend - subtrahend = difference                                                   %>
+<%    Neither the minend nor the subtrahend are altered.                                                              %>
+<%  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  %>
+-->
+<Task>
+    <!--MINUEND : for more information please see the given config file -->
+
+  <Param name="minuend">harvested-data.model.xml</Param>
+
+  <Param name="subtrahend">previous-harvest.model.xml</Param>
+
+    <!--DUMPFILE -->
+  <Param name="dumptofile">xmlrdf=data/vivo-additions.rdf.xml</Param>
+  <Param name="dumptolanguage">xmlrdf=RDF/XML</Param>
+  <Param name="dumptofile">ntriple=data/vivo-additions.ntriples.rdf</Param>
+  <Param name="dumptolanguage">ntriple=N-TRIPLE</Param>
+  <Param name="wordiness">INFO</Param>
+</Task>
