@@ -1,0 +1,11 @@
+PREFIX core: <http://vivoweb.org/ontology/core#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+
+
+CONSTRUCT {
+     PERSON_URI obo:ARG_2000028 ?vcard .
+     ?vcard obo:ARG_2000029 PERSON_URI
+} WHERE {
+     PERSON_URI obo:ARG_2000028 ?vcard .
+}

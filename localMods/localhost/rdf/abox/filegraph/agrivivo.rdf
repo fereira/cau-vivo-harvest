@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:vann="http://purl.org/vocab/vann/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <owl:Ontology rdf:about="http://www.agrivivo.net/ontology/agrivivo">
+    <dc:title>AgriVIVO vocabulary</dc:title>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-12-21</dc:modified>
+    <vann:preferredNamespaceUri>http://www.agrivivo.net/ontology/agrivivo#</vann:preferredNamespaceUri>
+    <vann:preferredNamespacePrefix>agrivivo</vann:preferredNamespacePrefix>
+    <foaf:page rdf:resource="http://www.agrivivo.net/ontology/agrivivo.html"/>
+    <dc:creator rdf:resource="http://www.agrivivo.net/ontology/agrivivo#admin"/>
+  </owl:Ontology>
+
+  <foaf:Person rdf:about="http://www.agrivivo.net/ontology/agrivivo#admin">
+    <foaf:nick>admin</foaf:nick>
+  </foaf:Person>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#AgriculturalExtensionOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Agricultural Extension</rdfs:label>
+    <rdfs:comment>Organizations of this type work in extension services, advisory services, information services.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#AgriculturalResearchCenter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Agricultural Research Center</rdfs:label>
+    <rdfs:comment>Organizations of this type include international research centers, research organizations, centers of the CGIAR and AIRCA networks</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://vivoweb.org/ontology/core#ResearchOrganization"/>
+    <rdfs:subClassOf rdf:resource="http://vivoweb.org/ontology/core#Center"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#AgriculturalResearchInstitute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Agricultural Research Institute</rdfs:label>
+    <rdfs:comment>Institutions of this type include national agricultural research Institutes, research Institutions. This type doesn't include international research centers or research organizations.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://vivoweb.org/ontology/core#ResearchOrganization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#CivilSocietyOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Civil Society Organization</rdfs:label>
+    <rdfs:comment>Synonyms in data sources: Civil society, CSOs, Consumers</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#EducationalInstitution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Educational Institution</rdfs:label>
+    <rdfs:comment>Universities, coleges, schools, training centers belong to this type of Institution.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#FarmersOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Farmers’ Organization</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#Forum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Forum</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#GovernmentalOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Governmental and Inter-Governmental organization</rdfs:label>
+    <rdfs:comment>For the moment, also &quot;public&quot; Institution fall under this category. Create a separate &quot;Public sector&quot; class?</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#InternationalOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>International Organization</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#NonGovernmentalOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Non-Governmental Organization</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#Network">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Network</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#Platform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Platform</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#PrivateSector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Private Sector</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#RegionalSubRegionalOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Regional / Sub-Regional Organization</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#ResearchProgramme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Research Programme</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="http://vivoweb.org/ontology/core#Project"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="http://www.agrivivo.net/ontology/agrivivo#DataProvider">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.agrivivo.net/ontology/agrivivo"/>
+    <rdfs:label>Data Provider</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+  </rdfs:Class>
+
+</rdf:RDF>

@@ -1,0 +1,28 @@
+#java specific
+*.class
+
+#ignore eclipse build directory
+bin/
+build/
+.classpath
+.project
+
+# ignore specific files
+jdbc.properties
+jdbc.properties-local
+harvester/run.out
+
+# ignore specific directories
+support/
+harvester/logs/
+harvester/data/
+#harvester/previous-harvest/
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.save
+
