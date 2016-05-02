@@ -16,15 +16,23 @@
 	<Param name="score-config">score-data.model.xml</Param>
 	
 	<!--OPTIONS -->
-        <!-- <Param name="tempJenaDir">data/temp-score-model</Param> -->
-	<Param name="namespace">http://vivo.example.com/harvest/concept/</Param>
+	<!-- <Param name="tempJenaDir">data/temp-score-model</Param> -->
+	<Param name="namespace">http://vivo.example.com/harvest/vcardTitle</Param>
 			
 	<!--COMPARISIONS -->
 	
-	<!--EMAIL-->
+	<!-- rdfs Label -->
 	<Param name="algorithms">vcard=org.vivoweb.harvester.score.algorithm.EqualityTest</Param>
-	<Param name="weights">vcard=1.0</Param>
+	<Param name="weights">vcard=0.8</Param>
 	<Param name="inputJena-predicates">vcard=http://www.w3.org/2000/01/rdf-schema#label</Param>
 	<Param name="vivoJena-predicates">vcard=http://www.w3.org/2000/01/rdf-schema#label</Param>
+
+        <!-- vcard title -->
+	<Param name="algorithms">vcardTitle=org.vivoweb.harvester.score.algorithm.EqualityTest</Param>
+	<Param name="weights">vcardTitle=0.2</Param>
+        <Param name="inputJena-predicates">vcardTitle=http://www.w3.org/2006/vcard/ns#title</Param>
+        <Param name="vivoJena-predicates">vcardTitle=http://www.w3.org/2006/vcard/ns#title</Param>
+
+
 </Task>
 

@@ -9,6 +9,7 @@
   <Param name="vivoJena-config">vivo.model.xml</Param>
   <Param name="score-config">score-data.model.xml</Param>
   <Param name="namespace">http://vivo.example.com/harvest/webpage/</Param>  
+
   <Param name="algorithms">linkURI=org.vivoweb.harvester.score.algorithm.NormalizedLevenshteinDifference</Param>
   <!-- <Param name="algorithms">linkURI=org.vivoweb.harvester.score.algorithm.EqualityTest</Param> -->
   <Param name="inputJena-predicates">linkURI=http://vivoweb.org/ontology/core#linkURI</Param>

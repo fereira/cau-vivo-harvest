@@ -16,7 +16,7 @@
 	<Param name="score-config">score-data.model.xml</Param>
 	
 	<!--OPTIONS -->
-	<Param name="tempJenaDir">data/temp-score-model</Param>
+        <!-- <Param name="tempJenaDir">data/temp-score-model</Param> -->	
 	<Param name="namespace">http://vivo.example.com/harvest/vcard/</Param>
 			
 	<!--COMPARISIONS -->

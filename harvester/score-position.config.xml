@@ -9,13 +9,15 @@
   <Param name="inputJena-config">harvested-data.model.xml</Param>
   <Param name="vivoJena-config">vivo.model.xml</Param>
   <Param name="score-config">score-data.model.xml</Param>
+   <!-- <Param name="tempJenaDir">data/temp-score-model</Param> -->  
   
-  <Param name="tempJenaDir">data/temp-score-model</Param>
   <Param name="namespace">http://vivo.example.com/harvest/position/</Param>  
+
   <Param name="algorithms">posOrg=org.vivoweb.harvester.score.algorithm.EqualityTest</Param>
   <Param name="weights">posOrg=0.7</Param>
   <Param name="inputJena-predicates">posOrg=http://vivoweb.org/ontology/score#affiliation</Param>
   <Param name="vivoJena-predicates">posOrg=http://vivoweb.org/ontology/score#affiliation</Param>
+
   <Param name="algorithms">posPer=org.vivoweb.harvester.score.algorithm.EqualityTest</Param>
   <Param name="weights">posPer=0.31</Param>
   <Param name="inputJena-predicates">posPer=http://vivoweb.org/ontology/score#position</Param>
