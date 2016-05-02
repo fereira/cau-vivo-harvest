@@ -11,13 +11,14 @@ build/
 jdbc.properties
 jdbc.properties-local
 harvester/run.out
+localmods/*/runtime.properties
 
 # ignore specific directories
 support/
 data/
 harvester/logs/
 harvester/data/
-#harvester/previous-harvest/
+harvester/previous-harvest/
 
 ## generic files to ignore
 *~
