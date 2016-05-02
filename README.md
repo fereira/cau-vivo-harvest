@@ -6,11 +6,14 @@ This project contains customizations for deploying the VIVO application for the 
 ### Dependencies
 
 * VIVO Software (https://github.com/vivo-project/VIVO/releases/) - currently using version 1.8.1
+  * install software to *vivo_working_dir* (e.g.  /usr/local/src/vivo-rel-1.8.1 )
 * JAVA jdk (version 1.7.x or later
 * Apache Tomcat (version 7.x)
+  * Install to *TOMDAT_HOME* (e.g. /usr/local/tomact)
 * Apache Ant
 * MySQL
 * VIVO-Harvester (https://github.com/vivo-project/VIVO-Harvester) - use develop branch
+  * Install to *VIVO_HARVESTER_DIR* (e.g. /usr/local/src/VIVO-Harvester)
 
 ### Initial configuration
 
@@ -46,5 +49,11 @@ for deployment.
   * Change the database connection URL, username and password to match what was used when creating the database.
   ```
   VitroConnection.DataSource.url=jdbc:mysql://yourhostname/vitrodb18useUnicode=true&characterEncoding=utf-8
-  VitroConnection.DataSource.username = USERNAME  VitroConnection.DataSource.password = PASSWORD  
+  VitroConnection.DataSource.username = USERNAME  
+  VitroConnection.DataSource.password = PASSWORD  
   ```
+* Copy local modifications to the VIVO instance 
+```
+% ant localMods
+```
+
