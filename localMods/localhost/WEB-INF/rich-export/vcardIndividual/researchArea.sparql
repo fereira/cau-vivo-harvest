@@ -1,8 +1,0 @@
-PREFIX core: <http://vivoweb.org/ontology/core#>
-
-CONSTRUCT {
-   ?researchArea core:researchAreaOf PERSON_URI .
-   PERSON_URI core:hasResearchArea ?researchArea .
-} WHERE {
-   PERSON_URI core:hasResearchArea ?researchArea .
-}
