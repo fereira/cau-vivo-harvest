@@ -6,12 +6,16 @@
 -->
 
 <Task>
+
+  <!--INPUT : for more information please see the given config file -->
+
   <Param name="inputModel">harvested-data.model.xml</Param>
   <Param name="vivoModel">vivo.model.xml</Param>
 
-    <!--  OPTIONS -->
+  <!--  OPTIONS -->
+
   <Param name="oldNamespace">http://vivo.example.com/harvest/org/</Param>
   <Param name="newNamespace">http://202.112.175.81:8080/vivo/individual/</Param>
   <Param name="wordiness">INFO</Param>
-  <Param name="errorLogging">false</Param>
+  <Param name="errorLogging">true</Param>
 </Task>
