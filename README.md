@@ -44,7 +44,7 @@ involves setting up the VIVO database and applying local modifications and confi
  > GRANT ALL ON vitrodb18.* TO 'USERNAME'@'localhost' IDENTIFIED BY 'PASSWORD';
 ```
 
-* Go to the working directory where the cau-vivo-harvester code has been downloaded (e.g. /usr/local/src/cau-vivo-harvest)
+* Go to the cau-vivo-harvest working ($CAU_VIVO_DIR)
 * Edit the localMods/v1.8/build.properties file
   * Set tomcat.home to the location where tomcat was installed  
   ``` tomcat.home = /usr/local/tomcat ```
@@ -64,8 +64,24 @@ involves setting up the VIVO database and applying local modifications and confi
   VitroConnection.DataSource.username = USERNAME  
   VitroConnection.DataSource.password = PASSWORD  
   ```
-* Copy local modifications to the VIVO instance 
+* Copy local modifications to the VIVO instance using the ant build.xml file in the $CAU_VIVO_DIR directory
 ```
+% cd /usr/local/src/cau-vivo-harvest
 % ant localMods
+
+* Deploy the VIVO software to Tomcat and set up the VIVO_HOME directory
 ```
+% cd /usr/local/src/vivo-rel-1.8.1
+% ant all
+```
+* Start up Tomcat 
+```
+% cd $TOMCAT_HOME/bin
+% sh startup.sh
+```
+* Use a browser to determine if VIVO is running.  Enter http://YOURHOSTNAME:8080/vivo-1.8 into the browser.  The first time VIVO starts
+it will display a diagnostic screen which may display some warnings.  Click on "Continue" to start VIVO.  If everything worked, view the cau-vivo-harvest.txt 
+file for information on how to harvest data into the VIVO instance.
+
+
 
