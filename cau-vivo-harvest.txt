@@ -1,0 +1,101 @@
+
+cau-vivo-harvest
+
+This file explains the steps necessary to harvest data into a CAU vivo instance.   The harvester is a set of scripts and configuration files 
+which are used to run a series of tools for fetching data, transforming that data to the VIVO ontology, and loading the data into the VIVO 
+instance.  All of the files necessary can be found in the harvester directory found in the project directory (e.g. /usr/local/src/cau-vivo-harvest).
+
+- Preliminary steps
+
+1. Defining the data sources
+
+The harvesting process has been set up to fetch data from a mysql database. The database contains a table for each university from 
+which data will be harvested.  Before data can be harvested from each of the universities a configuration file must be edited 
+which defines connection information for the database.  The file called jdbcfetch.config.xml contains this information as "Param" elements
+as follows:
+
+<Task>
+   <Param name="wordiness">INFO</Param>
+
+   <Param name="driver">com.mysql.jdbc.Driver</Param>
+   <Param name="connection">jdbc:mysql://localhost/caudata</Param>
+   <Param name="username">USERNAME</Param>
+   <Param name="password">PASSWORD</Param>
+   <Param name="tableName">vivotest</Param>
+   <Param name="output">raw-records.config.xml</Param>
+</Task>
+
+The "connection" param contains the database connection URL.  Note that the database is called "caudata".  This database should
+have been setup prior to harvesting.  The caudata directory under the project directory contains a file called schema.sql which 
+can be used to set up the database.  It is recommended that the caudata directory be used for creating the caudata database and 
+loading the data from each university into the database.
+
+The username and password params are used for validating access to the caudata database. Replace USERNAME and PASSWORD 
+strings with the appropriate connection information.
+
+The tableName (e.g. vivotest) is used to specify the name of the table containing each universities data.  It will need to 
+be changed each time data is to be harvested.
+
+The other param values do not need to be changed.
+
+2. Configuring access to the VIVO instance
+
+During the harvesting process the tools need access to the VIVO instance.  VIVO is configured to use a project called Jena SDB as the 
+triple store which will contain all of the data.  Jena SDB uses a database as a backend and thus will require connection information
+found in a configuration file called vivo.model.xml.  An example of this configuration file is provided as example.vivo.model.xml and
+should be copied to vivo.model.xml, which can be edited as necessary.
+
+The relevent "params" which will need to be edited are as follows:
+
+<Param name="dbUrl">jdbc:mysql://localhost/vitrodb18</Param>
+<Param name="dbUser">USERNAME</Param>
+<Param name="dbPass">PASSWORD</Param>
+
+These values will need to match the values set in the runtime.properties files that was edited during the setup of VIVO
+as described in the README.md file.  The relevant properties in the runtime.properties file are:
+
+VitroConnection.DataSource.url
+VitroConnection.DataSource.username
+VitroConnection.DataSource.password
+
+3. Configuring the VIVO Namespace
+
+During the harvesting process, each resource that is defined will have a temporary namespace prefix.  For example, http:://vivo.example.com/harvest/
+The Changenamespace tool will be executed to "mint" (create a new) URI which uses the real namespace for the instance of VIVO.  A file called
+changenamespace-all.config.xm is used to define both the old and new name space as follows:
+
+<Param name="oldNamespace">http://vivo.example.com/harvest/</Param>
+<Param name="newNamespace">http://202.112.175.81:8080/vivo/individual/</Param>
+
+Confirm, and change if necessary, the value of the "newNamespace" param.   The value should match the string set in the vivo
+runtime.properties file for "Vitro.defaultNamespace".
+
+Running the harvest
+
+The script called run-ingest.sh will run all of the tools necessary for a complete data harvest. It will perform the following step
+
+1. Fetch data from caudata database
+2. Translate data from a raw RDF format into a format which complies with the vivo ontology (using an XSL translation and the cau.datamap.xsl file)
+3. Transfer RDF into a temporary triple store (using Jena TDB)
+4. Using Score/Match tools, disambiguate data that is being harvested with data already in the VIVO instance.
+5. Using the Changenamespace tool, create "real" URIs in the VIVO namespace
+6. Using the Diff tool, generate a list of additions (new resources) and subtractions (resources to be removed)
+7. Apply the additions/substractions to a "previous-harvest" data model (allows that data being harvested to roll back)
+8. Transfer all additions/subtractions to the VIVO instance.
+
+This process needs to run for each data source (cau university).
+
+The process can be invoked as follows:
+
+% sh run-ingest.sh > run.out 2>&1
+
+Note that when the harvest is complete, one need to log into the VIVO instance, then using the Site Admin page, run the "Reindex Search Index" and 
+"Recompute Inferences" tools.
+
+
+
+
+
+
+
+
