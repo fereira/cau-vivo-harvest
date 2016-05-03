@@ -9,8 +9,8 @@
 
    <Param name="driver">com.mysql.jdbc.Driver</Param>
    <Param name="connection">jdbc:mysql://localhost/caudata</Param>
-   <Param name="username">vitro</Param>
-   <Param name="password">vitro123</Param>
+   <Param name="username">USERNAME</Param>
+   <Param name="password">PASSWORD</Param>
    <Param name="tableName">vivotest</Param>
    <Param name="output">raw-records.config.xml</Param>
 </Task>

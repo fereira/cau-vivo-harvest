@@ -10,10 +10,7 @@
     <Param name="dbClass">com.mysql.jdbc.Driver</Param>
     <Param name="dbType">MySQL</Param>
     <Param name="dbUrl">jdbc:mysql://localhost/vitrodb18</Param>
-    <!-- <Param name="dbUrl">jdbc:mysql://localhost/vivo18</Param> -->
     <Param name="modelName">http://vitro.mannlib.cornell.edu/default/vitro-kb-2</Param>
-    <Param name="dbUser">vitro</Param>
-    <!-- <Param name="dbUser">root</Param> -->
-    <Param name="dbPass">vitro123</Param>
-    <!-- <Param name="dbPass">0livetti</Param> -->
+    <Param name="dbUser">USERNAME</Param>
+    <Param name="dbPass">PASSWORD</Param>
 </Model>
