@@ -135,7 +135,6 @@
 		</copy>
 	</target>
 	
-   
    <target name="localMods" >
 
     <copy todir="${vivo.dir}"
@@ -193,7 +192,6 @@
         <include name="**/*" />
       </fileset>
     </copy>
-
 
    </target>
 
