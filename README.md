@@ -68,7 +68,7 @@ involves setting up the VIVO database and applying local modifications and confi
 ```
 % cd /usr/local/src/cau-vivo-harvest
 % ant localMods
-
+```
 * Deploy the VIVO software to Tomcat and set up the VIVO_HOME directory
 ```
 % cd /usr/local/src/vivo-rel-1.8.1
